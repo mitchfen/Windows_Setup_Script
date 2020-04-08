@@ -33,3 +33,6 @@ ForEach ($i in $packages) {
 	Write-Output "Installing package $j/$numberOfProgs"
     choco install $i -y
 }
+
+# Disable hibernation - hiberfil.sys wastes so much space
+powercfg -h off
