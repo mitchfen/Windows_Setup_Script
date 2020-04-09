@@ -15,10 +15,9 @@ choco install -y git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTermi
 # Install my frequently used programs
 # Remove geforce-experience if using Intel integrated graphics or AMD
 Write-Output "Beginning installation of programs..."
-$packages = 'ffmpeg', 'notepadplusplus', 'vim', 'qbittorrent', 'firefox', 'audacity',
-'keepassxc', 'spotify', 'python', 'youtube-dl', 'sumatrapdf', 'libreoffice-still', 'everything',
-'vscode', '7zip.install', 'putty.install', 'androidstudio', 'vcredist140', 'nodejs.install',
-'virtualbox', 'geforce-experience', 'steam'
+$packages = 'python', 'golang', 'rust', 'sqlite', 'php', 'nodejs.install', 'ffmpeg', 'notepadplusplus', 'vim', 'qbittorrent', 'firefox', 'audacity',
+'keepassxc', 'spotify',  'youtube-dl', 'sumatrapdf', 'libreoffice-still', 'everything',
+'vscode', '7zip.install', 'putty.install', 'androidstudio', 'vcredist140', 'virtualbox', 'geforce-experience', 'steam'
 
 # Total up the programs to be installed
 $numberOfProgs = 0
