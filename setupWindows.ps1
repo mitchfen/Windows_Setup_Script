@@ -36,3 +36,6 @@ ForEach ($i in $packages) {
 
 # Disable hibernation - hiberfil.sys wastes so much space
 powercfg -h off
+
+# Scriptcs for C# without Visual-Studio-code
+cinst scriptcs
