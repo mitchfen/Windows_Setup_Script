@@ -22,14 +22,14 @@ $packages = 'python', 'golang', 'rust', 'sqlite', 'php', 'nodejs.install', 'ffmp
 # Total up the programs to be installed
 $numberOfProgs = 0
 ForEach ($j in $packages) {
-	$numberOfProgs++
+    $numberOfProgs++
 }
 
 # Install each program and output progress
 $j = 0
-ForEach ($i in $packages) {
-	j++
-	Write-Output "Installing package $j/$numberOfProgs"
+ForEach ($j in $packages) {
+    j++
+    Write-Output "Installing package $j/$numberOfProgs"
     choco install $i -y
 }
 
