@@ -38,8 +38,5 @@ ForEach ($i in $packages) {
     choco install $i -y
 }
 
-# Need to set remotesigned so Powershell will read my config file
-Set-ExecutionPolicy remotesigned
-
 # Disable hibernation - hiberfil.sys wastes so much space
 powercfg -h off
