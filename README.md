@@ -2,15 +2,13 @@
 
 Why do repetetive tasks when the computer can do them for you?
 
-This simple Powershell script installs [chocolatey](https://chocolatey.org/) and then uses choco commands to install my frequently used programs.
+This simple Powershell script installs [chocolatey](https://chocolatey.org/) and uses choco commands to install my frequently used programs.
 
-Use the command `set-executionpolicy unrestricted` to enable execution of the script.
+This allows me to be up and running quickly on a fresh Windows install.  
+Last tested on Windows 10 version 1909.
 
-This allows me to be up and running on a fresh Windows install much faster than I would otherwise.
+### Running the script
 
-### TODO:
-
-* Format the output better, clean it up so it's easier to track install progress
-* Cleanup start menu
-* Disable telemetry
-* Disable Cortana
+1) Open Powershell as an administrator.
+2) Run the command `set-executionpolicy unrestricted` to enable execution of the script.
+3) Let chocolatey do its thing
