@@ -17,16 +17,12 @@ RefreshEnv.cmd
 Write-Host "Installing git and adding to path..." -ForegroundColor Red
 choco install -y git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTerminal'"
 
-# Overwrite Powershell profile
-Copy-Item .\Microsoft.PowerShell_profile.ps1 C:\Users\$env:UserName\WindowsPowershell
-RefreshEnv.cmd
-
 # Install my frequently used programs
 # Remove geforce-experience if using Intel integrated graphics or AMD
 Write-Host "Beginning installation of programs..." -ForegroundColor Red
 $packages = 'python', 'golang', 'rust', 'sqlite', 'php', 'nodejs.install', 'ffmpeg', 'notepadplusplus', 'vim', 'qbittorrent', 'firefox', 'audacity',
 'keepassxc', 'spotify',  'youtube-dl', 'sumatrapdf', 'everything',
-'vscode', '7zip.install', 'putty.install', 'androidstudio', 'vcredist140', 'virtualbox', 'geforce-experience', 'steam'
+'vscode', '7zip.install', 'putty.install', 'androidstudio', 'vcredist140', 'virtualbox', 'steam'
 
 # Total up the programs to be installed
 $numberOfProgs = 0
@@ -38,11 +34,12 @@ ForEach ($j in $packages) {
 $j = 0
 ForEach ($i in $packages) {
     $j++
-    Write-Host 'Installing package $j/$numberOfProgs' -ForegroundColor Red
+    Write-Host "Installing package $j/$numberOfProgs" -ForegroundColor Red
     choco install $i -y
 }
 
-# Refresh now that all the packages installed
+# Overwrite Powershell profile
+Copy-Item .\Microsoft.PowerShell_profile.ps1 C:\Users\$env:UserName\Documents\WindowsPowershell
 RefreshEnv.cmd
 
 # Grab my vimrc file and place it
