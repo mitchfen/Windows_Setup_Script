@@ -22,7 +22,7 @@ choco install -y git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTermi
 Write-Host "Beginning installation of programs..." -ForegroundColor Red
 $packages = 'python', 'golang', 'rust', 'sqlite', 'php', 'nodejs.install', 'ffmpeg', 'notepadplusplus', 'vim', 'qbittorrent', 'firefox', 'audacity',
 'keepassxc', 'spotify',  'youtube-dl', 'sumatrapdf', 'everything',
-'vscode', '7zip.install', 'putty.install', 'androidstudio', 'vcredist140', 'virtualbox', 'steam'
+'vscode', '7zip.install', 'putty.install', 'androidstudio', 'vcredist140', 'virtualbox', 'steam', 'github-desktop'
 
 # Total up the programs to be installed
 $numberOfProgs = 0
@@ -38,17 +38,8 @@ ForEach ($i in $packages) {
     choco install $i -y
 }
 
-# Overwrite Powershell profile
-Copy-Item .\Microsoft.PowerShell_profile.ps1 C:\Users\$env:UserName\Documents\WindowsPowershell
-RefreshEnv.cmd
-
-# Grab my vimrc file and place it
-cd C:\Users\$env:UserName\Downloads
-git clone https://github.com/mitchfen/dotfiles.git
-cd dotfiles
-Copy-Item _vimrc C:\Users\$env:UserName\
-cd ..
-Remove-Item -LiteralPath ".\dotfiles" -Force -Recurse
+# Need to set remotesigned so Powershell will read my config file
+Set-ExecutionPolicy remotesigned
 
 # Disable hibernation - hiberfil.sys wastes so much space
 powercfg -h off

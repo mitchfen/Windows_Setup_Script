@@ -9,6 +9,9 @@ Last tested on Windows 10 version 1909.
 
 ### Running the script
 
-1) Open Powershell as an administrator.
-2) Run the command `set-executionpolicy unrestricted` to enable execution of the script.
-3) Let chocolatey do its thing
+1) Download and unzip the repository.
+2) Open Powershell as an administrator, navigate to the download location.
+3) Run the command `set-executionpolicy unrestricted` to enable execution of the script.
+4) Run `.\setupWindows.ps1`
+5) When the setup script finishes, open a new Powershell window (Must be a new window)
+6) Navigate to the directory where the scripts are saved, and run `.\cloneConfigs.ps1`
