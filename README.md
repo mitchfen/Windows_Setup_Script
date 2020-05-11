@@ -12,12 +12,12 @@ Last tested on Windows 10 version 1909.
 
 1) Download and unzip the repository.
 2) Open Powershell as an administrator, navigate to the download location.
-3) Run the command `Set-ExecutionPolicy RemoteSigned` to enable execution of the script.
+3) Run the command `Set-ExecutionPolicy Unrestricted` to enable execution of the script.
 4) Run `.\setup_windows.ps1`
 5) When the setup script finishes, open a new Powershell window (Must be a new window for git commands to work)
-6) Run `Set-ExecutionPolicy RemoteSigned`
+6) Run `Set-ExecutionPolicy Unrestricted`
 7) Navigate to the directory where the scripts are saved, and run `.\clone_configs_and_debloat.ps1.ps1`
-8) Finally, run `Set-ExecutionPolicy RemoteSigned`. Done!
+8) Finally, run `Set-ExecutionPolicy AllSigned`. Done!
 
 ### TODO
 
