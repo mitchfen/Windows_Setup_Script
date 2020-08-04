@@ -1,4 +1,4 @@
-﻿# This script clones my configs and then places them in the proper directories.
+# This script clones my configs and then places them in the proper directories.
 # For some reason, after running the setup script, git is not immediatly recognized as a command, despite refreshenv
 # So for now, the easiest way to achieve what I want, is to run setupWindows.ps1, followed by cloneConfigs.ps1 in a new Powershell window.
 
@@ -9,7 +9,6 @@ git clone https://github.com/mitchfen/dotfiles.git
 cd .\dotfiles
 
 Write-Host "Placing _vimrc and profile.ps1" -ForegroundColor Red
-Copy-Item .\profile.ps1 $PSHOME
 Copy-Item _vimrc C:\Users\$env:UserName\
 
 Write-Host "Cloning Debloat-Windows-10" -ForegroundColor Red
