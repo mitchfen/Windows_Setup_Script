@@ -4,13 +4,6 @@
 
 cd C:\Users\$env:UserName\Downloads
 
-Write-Host "Cloning configs" -ForegroundColor Red
-git clone https://github.com/mitchfen/dotfiles.git
-cd .\dotfiles
-
-Write-Host "Placing _vimrc and profile.ps1" -ForegroundColor Red
-Copy-Item _vimrc C:\Users\$env:UserName\
-
 Write-Host "Cloning Debloat-Windows-10" -ForegroundColor Red
 git clone https://github.com/W4RH4WK/Debloat-Windows-10.git
 
@@ -23,7 +16,7 @@ cd .\Debloat-Windows-10\scripts
 
 Write-Host "Cleaning up" -ForegroundColor Red
 cd C:\Users\$env:UserName\Downloads
-Remove-Item -LiteralPath ".\dotfiles" -Force -Recurse
+Remove-Item -LiteralPath ".\Debloat-Windows-10" -Force -Recurse
 
 # Removing the config Chocolatey created - Using the profile.ps1 config for all users instead
 Remove-Item C:\Users\$env:UserName\Documents\WindowsPowershell\Microsoft.PowerShell_profile.ps1
