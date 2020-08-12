@@ -6,21 +6,17 @@ This simple Powershell script installs [chocolatey](https://chocolatey.org/) and
 It also clones my configuration files and runs three scripts from [Debloat-Windows-10](https://github.com/W4RH4WK/Debloat-Windows-10).  
   
 This allows me to be up and running quickly on a fresh Windows install.  
-Last tested on Windows 10 version 1909.
+Last tested on Windows 10 version 2004.
 
 ### Running the script
 
 1) Download and unzip the repository.
 2) Open Powershell as an administrator, navigate to the download location.
-3) Run the command `Set-ExecutionPolicy Unrestricted` to enable execution of the script.
-4) Run `.\setup_windows.ps1`
-5) When the setup script finishes, open a new Powershell window (Must be a new window for git commands to work)
-6) Run `Set-ExecutionPolicy Unrestricted`
-7) Navigate to the directory where the scripts are saved, and run `.\clone_configs_and_debloat.ps1.ps1`
-8) Finally, run `Set-ExecutionPolicy AllSigned`. Done!
+3) Run the command `PowerShell.exe -ExecutionPolicy UnRestricted -File .\setup_windows.ps1`
+4) When the setup script finishes, open a new Powershell window (Must be a new window for git commands to work)
+5) Run `PowerShell.exe -ExecutionPolicy UnRestricted -File .\debloat.ps1`
 
 ### TODO
 
-* Streamline the Set-ExecutionPolicy commands that the user must input manually - sign the scripts
 * Find a way around the git issue so that the scripts can be combined
 * Add code to remove all start menu pins
