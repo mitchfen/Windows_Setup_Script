@@ -12,10 +12,8 @@ cd .\Debloat-Windows-10\scripts
 .\block-telemetry.ps1
 .\fix-privacy-settings.ps1
 .\remove-default-apps.ps1
+.\remove-onedrive.ps1
 
 Write-Host "Cleaning up" -ForegroundColor Red
 cd C:\Users\$env:UserName\Downloads
 Remove-Item -LiteralPath ".\Debloat-Windows-10" -Force -Recurse
-
-# Removing the config Chocolatey created - Using the profile.ps1 config for all users instead
-Remove-Item C:\Users\$env:UserName\Documents\WindowsPowershell\Microsoft.PowerShell_profile.ps1
