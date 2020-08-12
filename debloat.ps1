@@ -13,7 +13,3 @@ cd .\Debloat-Windows-10\scripts
 .\fix-privacy-settings.ps1
 .\remove-default-apps.ps1
 .\remove-onedrive.ps1
-
-Write-Host "Cleaning up" -ForegroundColor Red
-cd C:\Users\$env:UserName\Downloads
-Remove-Item -LiteralPath ".\Debloat-Windows-10" -Force -Recurse

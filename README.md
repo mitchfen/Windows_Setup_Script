@@ -12,7 +12,7 @@ Last tested on Windows 10 version 2004.
 
 1) Download and unzip the repository.
 2) Open Powershell as an administrator, navigate to the download location.
-3) `PowerShell.exe -ExecutionPolicy UnRestricted -File .\setup_windows.ps1`
+3) `PowerShell.exe -ExecutionPolicy UnRestricted -File .\setupWindows.ps1`
 4) Close and reopen powershell (Must be a new window for git commands to work)
 5) `PowerShell.exe -ExecutionPolicy UnRestricted -File .\debloat.ps1`
 
