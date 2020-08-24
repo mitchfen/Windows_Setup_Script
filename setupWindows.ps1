@@ -16,9 +16,11 @@ choco install -y git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTermi
 
 # Install my frequently used programs
 Write-Host "Beginning installation of programs..." -ForegroundColor Red
-$packages = 'python', 'golang', 'rust', 'sqlite', 'php', 'nodejs.install', 'ffmpeg', 'notepadplusplus', 'vim', 'qbittorrent', 'firefox', 'audacity',
-'keepassxc', 'spotify',  'youtube-dl', 'sumatrapdf', 'everything',
-'vscode', '7zip.install', 'putty.install', 'androidstudio', 'vcredist140', 'virtualbox', 'steam', 'github-desktop'
+$packages = 
+    'python', 'sqlite', 'ffmpeg', 'notepadplusplus', 'vim', 'qbittorrent', 
+    'firefox', 'audacity', 'keepassxc', 'spotify',  'youtube-dl', 'sumatrapdf', 
+    'everything', 'vscode', '7zip.install', 'putty.install', 'vcredist140', 
+    'virtualbox', 'steam', 'github-desktop', 'brave', 'origin', 'msiafterburner'
 
 # Total up the programs to be installed
 $numberOfProgs = 0
@@ -54,7 +56,7 @@ Remove-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" -Name 
 Remove-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" -Name "OneDrive"
 
 # Remove 3D objects folder, show file extensions
-Write-Host "Improving the Windows file explorer" -ForegroundColor Red
+Write-Host "Removing silly 3D object folder, enabling file extensions in file explorer" -ForegroundColor Red
 Remove-Item "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
 Remove-Item "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "HideFileExt" 0
