@@ -1,4 +1,4 @@
-# Mitch's Powershell Setup Script
+# Mitchell's Powershell Setup Script
 
 Why do repetetive tasks when the computer can do them for you?
 
