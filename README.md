@@ -16,7 +16,7 @@ Last tested on Windows 10 version 2004.
 4) Close and reopen powershell (Must be a new window for git commands to work)
 5) `PowerShell.exe -ExecutionPolicy UnRestricted -File .\debloat.ps1`
 
-### TODO
+### Dependencies
 
-* Find a way around the git issue so that the scripts can be combined
-* Add code to remove all start menu pins
+The script downloads and uses [chocolatey](https://chocolatey.org/) which is distributed under the Apache License 2.0.  
+The script downloads and uses [Debloat-Windows-10](https://github.com/W4RH4WK/Debloat-Windows-10) which is distributed under "THE BEER-WARE LICENSE (Revision 42)"
