@@ -1,6 +1,5 @@
-# This script clones my configs and then places them in the proper directories.
-# For some reason, after running the setup script, git is not immediatly recognized as a command, despite refreshenv
-# So for now, the easiest way to achieve what I want, is to run setupWindows.ps1, followed by cloneConfigs.ps1 in a new Powershell window.
+# This script just grabs the debloat scripts and runs them.
+# For some reason, after running the setup script, git is not immediatly recognized as a command, despite refreshenv. Thats why you need to close and reopen Powershell.
 
 cd C:\Users\$env:UserName\Downloads
 
@@ -13,3 +12,5 @@ cd .\Debloat-Windows-10\scripts
 .\fix-privacy-settings.ps1
 .\remove-default-apps.ps1
 .\remove-onedrive.ps1
+
+Write-Host "DONE! :D" -ForegroundColor Red
