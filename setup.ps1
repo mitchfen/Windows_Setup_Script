@@ -17,9 +17,7 @@ choco install -y git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTermi
 # Install my frequently used programs
 Write-Host "Beginning installation of programs..." -ForegroundColor Red
 $packages = 
-    'python --version=3.8.6', 'sqlite', 'ffmpeg', 'notepadplusplus', 'vim', 'keepassxc', 
-    'spotify',  'youtube-dl', 'sumatrapdf', 'everything', 'vscode', '7zip.install', 
-    'putty.install', 'vcredist140', 'steam', 'github-desktop', 'brave', 'hwinfo', 'golang'
+    'python --version=3.8.6', 'sqlite', 'keepassxc', 'vscode', '7zip.install', 'putty.install', 'devcon.portable', 'vcredist140', 'steam', 'github-desktop', 'brave', 'hwinfo', 'golang'
 
 # Total up the programs to be installed
 $numberOfProgs = 0
