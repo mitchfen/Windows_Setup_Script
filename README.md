@@ -1,3 +1,6 @@
+[![Powershell](https://img.shields.io/badge/PowerShell-5391FE?style=flat-square&logo=PowerShell&logoColor=white)]()
+[![Chocolatey](https://img.shields.io/badge/Chocolatey-80B5E3?style=flat-square&logo=Chocolatey&logoColor=white)]()
+
 Why do repetetive tasks when the computer can do them for you?
 
 This simple Powershell script installs [chocolatey](https://chocolatey.org/) and then uses choco commands to install my frequently used programs.  
