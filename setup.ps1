@@ -1,6 +1,6 @@
-# Simple check to determine if user is administrator
-if($CurrentUser.IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)) {
-    
+# Simple check to determine if current user is administrator
+$isAdmin = (new-object System.Security.Principal.WindowsPrincipal([System.Security.Principal.WindowsIdentity]::GetCurrent())).IsInRole("Administrators")
+if ($isAdmin) {
     # Create a powershell profile
     New-Item -path $profile -type file -force
 
@@ -15,13 +15,11 @@ if($CurrentUser.IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)
     Write-Host "Installing git and adding to path" -ForegroundColor Magenta
     choco install -y git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTerminal'"
 
-    # Enable Windows Subsytem for Linux
-    Write-Host "Enabling Windows Subsytem for Linux" -ForegroundColor Magenta
-    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-
     # Install my frequently used programs
     Write-Host "Beginning installation of programs..." -ForegroundColor Magenta
-    $packages = @('python', 'sqlite', 'keepassxc', 'vscode', 'devcon.portable', '7zip.install', 'vcredist140', 'docker-desktop', 'authy-desktop', 'github-desktop', 'powershell-core', 'brave', 'hwinfo', 'golang', 'nodejs', 'microsoft-teams')
+    $packages = @('python', 'sqlite', 'youtube-dl', 'ffmpeg', 'keepassxc', 'vscode', 'devcon.portable', 
+    '7zip.install', 'vcredist140', 'docker-desktop', 'authy-desktop', 'github-desktop', 'powershell-core', 
+    'brave', 'hwinfo', 'golang', 'nodejs', 'microsoft-teams')
 
     # Install each program and output progress
     $count = 0
@@ -56,7 +54,9 @@ if($CurrentUser.IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)
     Install-Module posh-git
     Install-Module oh-my-posh
 
-    Write-Host "Done!" -ForegroundColor Magenta\
+    # Enable Windows Subsytem for Linux
+    Write-Host "Enabling Windows Subsytem for Linux" -ForegroundColor Magenta
+    Enable-WindowsOptionalFeature -Online -FeatureName $("VirtualMachinePlatform", "Microsoft-Windows-Subsystem-Linux")
     
 } else {    
     Write-Host "Please run this script as an administrator" -ForegroundColor Red
