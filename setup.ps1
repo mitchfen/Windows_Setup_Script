@@ -11,15 +11,18 @@ if ($isAdmin) {
     # Need to refresh before running choco commands
     RefreshEnv.cmd
 
-    # Install git
+    # Install git, add Unix tools to PATH, and make vim the default editor
     Write-Host "Installing git and adding to path" -ForegroundColor Magenta
     choco install -y git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTerminal'"
 
     # Install my frequently used programs
     Write-Host "Beginning installation of programs..." -ForegroundColor Magenta
-    $packages = @('python', 'sqlite', 'youtube-dl', 'ffmpeg', 'keepassxc', 'vscode', 'devcon.portable', 
-    '7zip.install', 'vcredist140', 'docker-desktop', 'authy-desktop', 'github-desktop', 'powershell-core', 
-    'brave', 'hwinfo', 'golang', 'nodejs', 'microsoft-teams')
+    $packages = @(
+        'python', 'sqlite', 'youtube-dl', 'ffmpeg', 'keepassxc', 'vscode',
+        'devcon.portable', '7zip.install', 'vcredist140', 'docker-desktop', 
+        'github-desktop', 'powershell-core', 'microsoft-windows-terminal', 'brave', 
+        'hwinfo', 'nodejs', 'vlc', 'vim'
+    )
 
     # Install each program and output progress
     $count = 0
@@ -27,8 +30,6 @@ if ($isAdmin) {
         Write-Host "Installing package ($j/$packages.count)" -ForegroundColor Magenta
         choco install $i -y
     }
-
-    Write-Host "Finishing up..." -ForegroundColor Magenta
 
     # Disable hibernation
     powercfg -h off
@@ -43,7 +44,6 @@ if ($isAdmin) {
     # Stop Apps from opening at startup
     Remove-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" -Name "KeePassXC"
     Remove-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" -Name "OneDrive"
-    Remove-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" -Name "com.squirrel.Teams.Teams"
 
     # Remove 3D objects folder, show file extensions
     Remove-Item "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"

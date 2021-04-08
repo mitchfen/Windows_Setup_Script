@@ -1,0 +1,13 @@
+name: test-install
+
+on: [push]
+
+jobs:
+  test-install:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run the script
+        run: PowerShell.exe -ExecutionPolicy UnRestricted -File ./setup.ps1
