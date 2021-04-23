@@ -1,0 +1,12 @@
+name: Test PowerShell Script
+on:
+  workflow_dispatch:
+
+jobs:
+  container-job:
+    runs-on: windows-latest
+    container:
+      image: docker pull mcr.microsoft.com/windows:1809
+    steps:
+      - uses: actions/checkout@v1
+      - run: PowerShell.exe -ExecutionPolicy UnRestricted -File .\setup.ps1
